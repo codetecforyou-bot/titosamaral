@@ -48,7 +48,7 @@
 /* ───────── Botões ───────── */
 @layer components {
   .btn {
-    @apply relative inline-flex min-h-12 items-center justify-center gap-2.5 px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.14em] transition-all duration-300;
+    @apply relative inline-flex min-h-12 items-center justify-center gap-2.5 px-6 py-3.5 text-center text-[14px] font-semibold uppercase tracking-[0.1em] transition-all duration-300 sm:px-7 sm:text-[13px] sm:tracking-[0.14em];
     transition-timing-function: var(--ease-premium);
   }
   .btn:active { transform: translateY(1px) scale(0.99); }
@@ -69,7 +69,7 @@
   .btn-dark:hover { @apply bg-brown-700; }
 
   .input {
-    @apply block min-h-12 w-full border border-sand bg-white px-4 py-3 text-[15px] text-ink transition-colors placeholder:text-muted-dark/60;
+    @apply block min-h-12 w-full border border-sand bg-white px-4 py-3 text-base text-ink transition-colors placeholder:text-muted-dark/60 sm:text-[15px];
   }
   .input:hover { @apply border-gold/60; }
   .input:focus { @apply border-gold outline-none; box-shadow: 0 0 0 3px rgb(201 163 106 / 0.25); }
@@ -80,8 +80,8 @@
   .gold-rule {
     @apply block h-px w-14 bg-gold;
   }
-  .heading-xl { @apply text-[44px] leading-[1.02] sm:text-6xl lg:text-[76px]; }
-  .heading-lg { @apply text-[38px] leading-[1.05] sm:text-5xl lg:text-[58px]; }
+  .heading-xl { @apply text-[40px] leading-[1.04] min-[400px]:text-[44px] sm:text-6xl lg:text-[76px]; }
+  .heading-lg { @apply text-[34px] leading-[1.08] min-[400px]:text-[38px] sm:text-5xl lg:text-[58px]; }
   .lead-text { @apply text-[17px] leading-relaxed sm:text-lg; }
 }
 

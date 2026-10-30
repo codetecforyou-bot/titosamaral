@@ -29,16 +29,16 @@ export function Reviews() {
               <span className="flex flex-col gap-1.5">
                 <Stars value={site.google.rating} className="h-4 w-24" />
                 <span className="text-sm font-medium">de avaliação no Google</span>
-                <span className="text-xs text-gold underline underline-offset-2">Ver todas as avaliações</span>
+                <span className="text-[13px] text-gold underline underline-offset-2">Ver todas as avaliações</span>
               </span>
             </a>
           </Reveal>
         </div>
 
         <div className="mt-16 grid gap-5 lg:grid-cols-5">
-          <Reveal as="figure" className="flex flex-col justify-between gap-12 bg-mist p-10 text-brown sm:p-14 lg:col-span-3 lg:row-span-2">
+          <Reveal as="figure" className="flex flex-col justify-between gap-12 bg-mist p-7 text-brown sm:p-14 lg:col-span-3 lg:row-span-2">
             <span aria-hidden="true" className="font-serif text-[120px] leading-[0.5] text-gold">“</span>
-            <blockquote className="font-serif text-[40px] font-semibold leading-[1.08] sm:text-[56px]">{main.text}</blockquote>
+            <blockquote className="font-serif text-[34px] font-semibold leading-[1.1] sm:text-[56px]">{main.text}</blockquote>
             <ReviewAuthor review={main} light={false} />
           </Reveal>
           {rest.map((r, i) => (
@@ -65,7 +65,7 @@ function ReviewAuthor({ review, light }: { review: (typeof reviews)[number]; lig
       )}
       <span className="flex flex-col gap-1">
         <span className={`font-semibold ${light ? "text-white" : "text-brown"}`}>{review.name}</span>
-        <span className="flex items-center gap-2 text-xs text-muted-dark">
+        <span className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px] text-muted-dark">
           <Stars value={5} className="h-3 w-[60px]" />
           <span className={light ? "text-muted/70" : ""}>Avaliação no Google</span>
         </span>

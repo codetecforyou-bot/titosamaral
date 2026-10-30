@@ -128,13 +128,13 @@ export function SmartForm({ initialArea, variant = "modal", onClose, onDone, tit
   // ───────────────────────── Tela final ─────────────────────────
   if (done) {
     return (
-      <div className="flex flex-col items-center px-6 py-14 text-center sm:px-12 sm:py-16">
+      <div className="flex flex-col items-center px-5 py-14 text-center sm:px-12 sm:py-16">
         <span className="flex size-20 items-center justify-center rounded-full border border-gold/50 bg-gold/10">
           <svg viewBox="0 0 24 24" className="size-9 text-gold-deep" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
             <path className="check-draw" d="M5 12.5l4.5 4.5L19 7.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </span>
-        <h2 ref={headingRef} tabIndex={-1} id={titleId} className="mt-8 text-4xl text-brown outline-none sm:text-5xl">
+        <h2 ref={headingRef} tabIndex={-1} id={titleId} className="mt-8 text-[32px] leading-[1.1] text-brown outline-none sm:text-5xl">
           Obrigado por compartilhar sua situação!
         </h2>
         <p className="mt-5 max-w-md text-muted-dark">
@@ -151,7 +151,7 @@ export function SmartForm({ initialArea, variant = "modal", onClose, onDone, tit
           Continuar atendimento pelo WhatsApp
         </a>
         {variant === "modal" && onClose && (
-          <button type="button" onClick={onClose} className="mt-5 text-sm font-medium text-muted-dark underline-offset-4 hover:text-brown hover:underline">
+          <button type="button" onClick={onClose} className="mt-3 min-h-11 px-4 text-[15px] font-medium text-muted-dark underline-offset-4 hover:text-brown hover:underline">
             Voltar ao site
           </button>
         )}
@@ -166,12 +166,12 @@ export function SmartForm({ initialArea, variant = "modal", onClose, onDone, tit
   return (
     <div className="flex h-full min-h-0 flex-col">
       {/* Progresso */}
-      <div className="flex-none px-6 pt-6 sm:px-10 sm:pt-8">
-        <div className="flex items-center justify-between gap-4 pr-12 text-[12px] font-semibold uppercase tracking-[0.16em] text-muted-dark">
-          <span>
+      <div className="flex-none px-5 pt-6 sm:px-10 sm:pt-8">
+        <div className="flex flex-col gap-1 pr-12 text-[13px] font-semibold uppercase tracking-[0.12em] text-muted-dark sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:tracking-[0.16em]">
+          <span className="whitespace-nowrap">
             Etapa <span className="text-brown">{step + 1}</span> de {TOTAL_STEPS}
           </span>
-          {flow && step > 0 && <span className="truncate text-gold-deep">{flow.areaName}</span>}
+          {flow && step > 0 && <span className="text-gold-deep">{flow.areaName}</span>}
         </div>
         <div
           className="mt-3 h-[3px] w-full overflow-hidden bg-sand"
@@ -188,7 +188,7 @@ export function SmartForm({ initialArea, variant = "modal", onClose, onDone, tit
       {current ? (
         <div
           key={`${current.id}-${step}`}
-          className={`min-h-0 flex-1 overflow-y-auto px-6 pb-4 pt-8 sm:px-10 ${direction === "next" ? "step-next" : "step-prev"}`}
+          className={`min-h-0 flex-1 overflow-y-auto px-5 pb-4 pt-7 sm:px-10 sm:pt-8 ${direction === "next" ? "step-next" : "step-prev"}`}
           onKeyDown={(e: KeyboardEvent) => {
             if (e.key === "Enter" && (e.target as HTMLElement).tagName === "INPUT") {
               e.preventDefault();
@@ -198,7 +198,7 @@ export function SmartForm({ initialArea, variant = "modal", onClose, onDone, tit
         >
           <fieldset>
             <legend className="contents">
-              <h2 ref={headingRef} tabIndex={-1} id={titleId} className="text-[30px] leading-[1.1] text-brown outline-none sm:text-[40px]">
+              <h2 ref={headingRef} tabIndex={-1} id={titleId} className="text-[28px] leading-[1.12] text-brown outline-none min-[400px]:text-[30px] sm:text-[40px]">
                 {current.question}
               </h2>
             </legend>
@@ -211,7 +211,7 @@ export function SmartForm({ initialArea, variant = "modal", onClose, onDone, tit
                   <label
                     key={opt.value}
                     htmlFor={id}
-                    className={`group relative flex min-h-14 cursor-pointer items-center gap-4 border px-5 py-3.5 text-[15px] transition-all duration-300 ${
+                    className={`group relative flex min-h-14 cursor-pointer items-center gap-4 border px-4 py-3.5 text-[15px] transition-all duration-300 sm:px-5 ${
                       checked
                         ? "border-gold bg-gold/10 text-brown shadow-[0_8px_24px_-14px_rgb(201_163_106/0.9)]"
                         : "border-sand bg-white text-ink hover:border-gold/60 hover:bg-mist"
@@ -249,9 +249,9 @@ export function SmartForm({ initialArea, variant = "modal", onClose, onDone, tit
           id={`${uid}-contato`}
           noValidate
           onSubmit={submit}
-          className={`min-h-0 flex-1 overflow-y-auto px-6 pb-4 pt-8 sm:px-10 ${direction === "next" ? "step-next" : "step-prev"}`}
+          className={`min-h-0 flex-1 overflow-y-auto px-5 pb-4 pt-7 sm:px-10 sm:pt-8 ${direction === "next" ? "step-next" : "step-prev"}`}
         >
-          <h2 ref={headingRef} tabIndex={-1} id={titleId} className="text-[30px] leading-[1.1] text-brown outline-none sm:text-[40px]">
+          <h2 ref={headingRef} tabIndex={-1} id={titleId} className="text-[28px] leading-[1.12] text-brown outline-none min-[400px]:text-[30px] sm:text-[40px]">
             Quem está preenchendo este formulário?
           </h2>
           <p className="mt-3 text-sm text-muted-dark">Seus dados são confidenciais e usados apenas para o retorno do escritório.</p>
@@ -313,16 +313,16 @@ export function SmartForm({ initialArea, variant = "modal", onClose, onDone, tit
           </div>
 
           <div className="mt-6">
-            <label className="flex cursor-pointer items-start gap-3 text-sm leading-relaxed text-muted-dark">
+            <label className="flex min-h-11 cursor-pointer items-start gap-3 text-sm leading-relaxed text-muted-dark">
               <input
                 type="checkbox"
                 checked={contact.consent}
                 onChange={(e) => setContact({ ...contact, consent: e.target.checked })}
                 aria-invalid={Boolean(errors.consent)}
                 aria-describedby={errors.consent ? `${uid}-consent-err` : undefined}
-                className="mt-1 size-[18px] flex-none accent-[#7a5c2c]"
+                className="mt-0.5 size-[22px] flex-none accent-[#7a5c2c]"
               />
-              <span>
+              <span className="text-[14px]">
                 Autorizo o escritório Tito S Amaral a usar os dados informados para analisar minha solicitação e entrar em contato,
                 conforme a Lei Geral de Proteção de Dados (LGPD) e a{" "}
                 <Link href="/politica-de-privacidade" target="_blank" className="font-semibold text-gold-deep underline underline-offset-2">
@@ -346,7 +346,7 @@ export function SmartForm({ initialArea, variant = "modal", onClose, onDone, tit
               </a>
             </div>
           )}
-          <p className="mt-6 flex items-center gap-2 text-xs text-muted-dark">
+          <p className="mt-6 flex items-center gap-2 text-[13px] text-muted-dark">
             <ShieldCheck className="size-4 text-gold-deep" aria-hidden="true" />
             Conexão segura. Suas informações são protegidas pelo sigilo profissional.
           </p>
@@ -354,16 +354,16 @@ export function SmartForm({ initialArea, variant = "modal", onClose, onDone, tit
       )}
 
       {/* Navegação */}
-      <div className="flex flex-none items-center justify-between gap-3 border-t border-sand bg-white/70 px-6 py-4 sm:px-10 sm:py-5">
+      <div className="flex flex-none items-center justify-between gap-3 border-t border-sand bg-white/70 px-5 py-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:px-10 sm:py-5">
         {step > 0 ? (
-          <button type="button" onClick={() => go(step - 1)} className="btn btn-outline-dark px-5" disabled={submitting}>
+          <button type="button" onClick={() => go(step - 1)} className="btn btn-outline-dark px-4 sm:px-5" disabled={submitting}>
             <ArrowLeft className="size-4" aria-hidden="true" /> Voltar
           </button>
         ) : (
           <span />
         )}
         {isContactStep ? (
-          <button type="submit" form={`${uid}-contato`} className="btn btn-gold min-w-40" disabled={submitting}>
+          <button key="enviar" type="submit" form={`${uid}-contato`} className="btn btn-gold min-w-36 sm:min-w-40" disabled={submitting}>
             {submitting ? (
               <>
                 <LoaderCircle className="size-4 animate-spin" aria-hidden="true" /> Enviando
@@ -375,7 +375,7 @@ export function SmartForm({ initialArea, variant = "modal", onClose, onDone, tit
             )}
           </button>
         ) : (
-          <button type="button" onClick={next} className="btn btn-dark min-w-40">
+          <button key="continuar" type="button" onClick={next} className="btn btn-dark min-w-36 sm:min-w-40">
             Continuar <ArrowRight className="size-4" aria-hidden="true" />
           </button>
         )}
@@ -399,7 +399,7 @@ function Field({
 }) {
   return (
     <div className={className}>
-      <label htmlFor={id} className="mb-2 block text-[13px] font-semibold text-brown">
+      <label htmlFor={id} className="mb-2 block text-[14px] font-semibold text-brown">
         {label}
       </label>
       {children}

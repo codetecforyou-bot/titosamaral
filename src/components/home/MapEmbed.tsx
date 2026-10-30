@@ -26,7 +26,7 @@ export function MapEmbed() {
   }
 
   return (
-    <div className="grain relative flex h-full min-h-[440px] flex-col items-center justify-center gap-6 overflow-hidden bg-brown p-10 text-center text-white">
+    <div className="grain relative flex h-full min-h-[440px] flex-col items-center justify-center gap-6 overflow-hidden bg-brown px-6 py-10 text-center text-white sm:p-10">
       <svg aria-hidden="true" className="absolute inset-0 h-full w-full opacity-[0.12]" preserveAspectRatio="none" viewBox="0 0 600 440">
         <g stroke="#C9A36A" fill="none">
           <path d="M0 120 L600 80" strokeWidth="10" />
@@ -48,14 +48,14 @@ export function MapEmbed() {
         </p>
       </div>
       <div className="relative flex flex-col gap-3 sm:flex-row">
-        <button type="button" onClick={() => setLoad(true)} className="btn btn-gold min-h-11 px-5 py-2.5 text-[12px]">
+        <button type="button" onClick={() => setLoad(true)} className="btn btn-gold px-5">
           Carregar mapa
         </button>
-        <a href={mapsLink()} target="_blank" rel="noopener noreferrer" className="btn btn-outline-light min-h-11 px-5 py-2.5 text-[12px]">
+        <a href={mapsLink()} target="_blank" rel="noopener noreferrer" className="btn btn-outline-light px-5">
           Abrir rota no Google Maps
         </a>
       </div>
-      <p className="relative max-w-xs text-xs text-muted/70">Ao carregar, o Google poderá coletar dados de navegação.</p>
+      <p className="relative max-w-xs text-[13px] text-muted/80">Ao carregar, o Google poderá coletar dados de navegação.</p>
     </div>
   );
 }

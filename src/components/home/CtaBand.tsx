@@ -16,12 +16,12 @@ export function CtaBand({
   whatsappMessage?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-gold py-24 text-brown lg:py-28">
+    <section data-wa-hide className="relative overflow-hidden bg-gold py-24 text-brown lg:py-28">
       <div aria-hidden="true" className="absolute -right-40 -top-40 size-[520px] rounded-full border border-brown/10" />
       <div aria-hidden="true" className="absolute -right-20 -top-20 size-[360px] rounded-full border border-brown/10" />
       <div className="container-site relative grid items-end gap-10 lg:grid-cols-[1.3fr_1fr] lg:gap-20">
         <Reveal>
-          <h2 className="text-[44px] leading-[1.02] sm:text-6xl lg:text-[72px]">{title}</h2>
+          <h2 className="text-[36px] leading-[1.06] min-[400px]:text-[40px] sm:text-6xl lg:text-[72px]">{title}</h2>
         </Reveal>
         <Reveal delay={120}>
           <p className="text-[17px] text-brown/80">{text}</p>

@@ -21,7 +21,7 @@ export function Contact() {
   ];
 
   return (
-    <section id="contato" className="bg-mist py-28 lg:py-36">
+    <section id="contato" data-wa-hide className="bg-mist py-28 lg:py-36">
       <div className="container-site grid gap-14 lg:grid-cols-[1fr_1.15fr] lg:gap-20">
         <div>
           <Reveal>
@@ -42,8 +42,8 @@ export function Contact() {
                     {item.icon}
                   </span>
                   <span className="flex flex-col">
-                    <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-dark">{item.label}</span>
-                    <span className="text-[15px] font-medium text-brown group-hover:text-gold-deep">{item.value}</span>
+                    <span className="text-[13px] font-semibold uppercase tracking-[0.12em] text-muted-dark">{item.label}</span>
+                    <span className="break-words text-[15px] font-medium text-brown group-hover:text-gold-deep">{item.value}</span>
                   </span>
                 </a>
               </Reveal>
@@ -53,7 +53,7 @@ export function Contact() {
           <Reveal className="mt-10 flex gap-5">
             <Clock className="mt-1 size-5 flex-none text-gold-deep" aria-hidden="true" />
             <div className="flex-1">
-              <h3 className="font-sans text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-dark">Horário de atendimento</h3>
+              <h3 className="font-sans text-[13px] font-semibold uppercase tracking-[0.12em] text-muted-dark">Horário de atendimento</h3>
               <dl className="mt-3 text-[15px]">
                 {site.hours.map((h) => (
                   <div key={h.days} className="flex justify-between gap-4 border-b border-sand py-2.5 last:border-0">

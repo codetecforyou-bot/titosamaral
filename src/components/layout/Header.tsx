@@ -38,6 +38,12 @@ export function Header() {
 
   const solid = scrolled || menuOpen;
 
+  // Libera a rolagem antes da navegação, para o link âncora conseguir rolar até a seção.
+  function closeMenu() {
+    document.body.style.overflow = "";
+    setMenuOpen(false);
+  }
+
   return (
     <>
     <header
@@ -46,8 +52,8 @@ export function Header() {
       }`}
     >
       <div className={`container-site flex items-center justify-between gap-6 transition-[height] duration-500 ${scrolled ? "h-[76px]" : "h-[92px]"}`}>
-        <Link href="/" aria-label={`${site.name}, página inicial`} className="relative z-10 flex-none">
-          <Image src={logo} alt="" priority className={`w-auto transition-[height] duration-500 ${scrolled ? "h-10" : "h-11 sm:h-12"}`} />
+        <Link href="/" aria-label={`${site.name}, página inicial`} className="relative z-10 flex min-h-12 flex-none items-center">
+          <Image src={logo} alt="" priority width={244} height={48} sizes="244px" className={`w-auto transition-[height] duration-500 ${scrolled ? "h-10" : "h-11 sm:h-12"}`} />
         </Link>
 
         <nav aria-label="Principal" className="hidden lg:block">
@@ -87,7 +93,7 @@ export function Header() {
       {/* Menu do celular (fora do header: o desfoque do header limitaria o "fixed") */}
       <div
         id="menu-mobile"
-        className={`fixed inset-0 z-40 flex flex-col bg-brown/97 pt-[92px] backdrop-blur-xl transition-all duration-500 ease-[var(--ease-premium)] lg:hidden ${
+        className={`fixed inset-0 z-[45] flex flex-col bg-brown/97 pt-[92px] backdrop-blur-xl transition-all duration-500 ease-[var(--ease-premium)] lg:hidden ${
           menuOpen ? "visible opacity-100" : "invisible opacity-0"
         }`}
         aria-hidden={!menuOpen}
@@ -102,7 +108,7 @@ export function Header() {
               >
                 <Link
                   href={item.href}
-                  onClick={() => setMenuOpen(false)}
+                  onClick={closeMenu}
                   tabIndex={menuOpen ? 0 : -1}
                   className="flex min-h-16 items-center justify-between font-serif text-[30px] text-white transition-colors hover:text-gold"
                 >
@@ -116,7 +122,7 @@ export function Header() {
               type="button"
               tabIndex={menuOpen ? 0 : -1}
               onClick={() => {
-                setMenuOpen(false);
+                closeMenu();
                 open();
               }}
               className="btn btn-gold w-full"

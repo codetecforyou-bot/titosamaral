@@ -48,16 +48,16 @@ export function TeamCard({ member }: { member: TeamMember }) {
         ) : (
           <div className="grain flex h-full min-h-56 flex-col items-center justify-center gap-3">
             <span className="font-serif text-6xl font-semibold text-gold">{initials}</span>
-            <span className="text-[11px] uppercase tracking-[0.2em] text-muted/60">[Foto profissional]</span>
+            <span className="text-[13px] uppercase tracking-[0.16em] text-muted/70">[Foto profissional]</span>
           </div>
         )}
       </div>
       <div className="flex flex-col p-7 sm:p-9">
         <h3 className="text-[30px] text-brown">{member.name}</h3>
-        <p className="mt-1 text-[13px] font-semibold uppercase tracking-[0.12em] text-gold-deep">{member.role}</p>
+        <p className="mt-1 text-[14px] font-semibold uppercase tracking-[0.1em] text-gold-deep">{member.role}</p>
         <ul className="mt-5 flex flex-wrap gap-2" aria-label="Especialidades">
           {member.specialties.map((s) => (
-            <li key={s} className="border border-sand bg-mist px-3 py-1 text-xs font-medium text-brown">
+            <li key={s} className="border border-sand bg-mist px-3 py-1 text-[13px] font-medium text-brown">
               {s}
             </li>
           ))}
@@ -71,7 +71,7 @@ export function TeamCard({ member }: { member: TeamMember }) {
             </li>
           ))}
         </ul>
-        {member.oab && <p className="mt-auto pt-6 text-xs tracking-wide text-muted-dark">{member.oab}</p>}
+        {member.oab && <p className="mt-auto pt-6 text-[13px] tracking-wide text-muted-dark">{member.oab}</p>}
       </div>
     </article>
   );

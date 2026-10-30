@@ -15,7 +15,7 @@ export function Hero() {
           alt="Fachada da sede do escritório Tito S Amaral em Goiânia"
           priority
           placeholder="blur"
-          sizes="100vw"
+          sizes="(max-width: 1024px) 1217px, 100vw"
           className="hero-zoom h-full w-full object-cover object-[60%_55%]"
         />
       </div>
@@ -42,11 +42,11 @@ export function Hero() {
             </Link>
           </div>
           <div className="mt-14 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-white/15 pt-7 text-sm text-white/75">
-            <a href={site.google.reviewsUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-white">
+            <a href={site.google.reviewsUrl} target="_blank" rel="noopener noreferrer" className="flex min-h-11 items-center gap-3 hover:text-white">
               <span className="font-serif text-3xl font-semibold text-gold">{site.google.rating.toLocaleString("pt-BR")}</span>
               <span className="flex flex-col gap-1">
                 <Stars value={site.google.rating} className="h-3.5 w-[72px]" />
-                <span className="text-xs">de avaliação no Google</span>
+                <span className="text-[13px]">de avaliação no Google</span>
               </span>
             </a>
             <span className="flex items-center gap-2">
