@@ -150,3 +150,8 @@ details > summary::-webkit-details-marker { display: none; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
   .js [data-reveal] { opacity: 1; transform: none; clip-path: none; }
 }
+
+/* Landing pages com a barra "Avaliar meu caso" fixa embaixo */
+.wa-float { transition-property: opacity, transform, bottom; }
+html[data-sticky-cta-visible="true"] .wa-float { bottom: 92px; }
+html[data-sticky-cta="on"] footer { padding-bottom: 96px; }

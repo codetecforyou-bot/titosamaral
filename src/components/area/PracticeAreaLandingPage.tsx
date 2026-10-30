@@ -6,6 +6,7 @@ import { whatsappLink } from "@/config/site";
 import { getTeamMembers } from "@/config/team";
 import type { PracticeArea } from "@/config/types";
 import { CtaBand } from "@/components/home/CtaBand";
+import { StickyAreaCta } from "./StickyAreaCta";
 import { TeamCard } from "@/components/home/Team";
 import { SmartForm } from "@/components/SmartForm/SmartForm";
 import { OpenFormButton } from "@/components/SmartForm/OpenFormButton";
@@ -45,7 +46,7 @@ export function PracticeAreaLandingPage({ area }: { area: PracticeArea }) {
             </span>
             <h1 className="mt-7 text-[34px] leading-[1.08] min-[400px]:text-[38px] sm:text-6xl lg:text-[68px]">{area.hero.title}</h1>
             <p className="lead-text mt-7 max-w-2xl text-white/80">{area.hero.subtitle}</p>
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <div id="area-hero-cta" className="mt-10 flex flex-col gap-3 sm:flex-row">
               <OpenFormButton area={area.slug} className="btn btn-gold">
                 Avaliar meu caso <ArrowRight className="size-4" aria-hidden="true" />
               </OpenFormButton>
@@ -207,6 +208,8 @@ export function PracticeAreaLandingPage({ area }: { area: PracticeArea }) {
           </ul>
         </div>
       </section>
+
+      <StickyAreaCta area={area.slug} />
     </>
   );
 }

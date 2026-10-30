@@ -47,7 +47,7 @@ export function WhatsAppButton() {
       aria-label={`Conversar no WhatsApp: ${site.whatsapp.display}`}
       aria-hidden={hidden || undefined}
       tabIndex={hidden ? -1 : undefined}
-      className={`group fixed bottom-4 right-4 z-40 flex items-center gap-3 transition-all duration-300 sm:bottom-7 sm:right-7 ${
+      className={`wa-float group fixed bottom-4 right-4 z-40 flex items-center gap-3 transition-all duration-300 sm:bottom-7 sm:right-7 ${
         hidden ? "pointer-events-none translate-y-4 opacity-0" : "opacity-100"
       }`}
     >
